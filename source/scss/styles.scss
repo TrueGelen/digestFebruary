@@ -482,6 +482,10 @@ body, div, h1, h2, h3, h4, p, input {
   &_bold{
     font-family: GothamPro-Bold, sans-serif;
   }
+
+  &_italic{
+    font-style: italic;
+  }
 }
 
 .mainTitle{
