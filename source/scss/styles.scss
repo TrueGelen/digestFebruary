@@ -400,7 +400,6 @@ body, div, h1, h2, h3, h4, p, input {
   font-family: GothamPro-Light, sans-serif;
   font-size: 16px;
   line-height: 22px;
-  margin-top: 30px;
   color: white;
 
   @include lg-block{
@@ -408,7 +407,28 @@ body, div, h1, h2, h3, h4, p, input {
     font-size: 15px;
   }
 
-  @include md(font-size, 1.2vw);
+  @include md-block{
+    line-height: 1.2;
+    font-size: 1.3vw;
+  }
+
+  // @include md(font-size, 1.2vw);
+
+  @include sm-block{
+    font-size: 2.15vw;
+    line-height: 1.25;
+    margin-top: 10px;
+  }
+
+  @include xs-block{
+    font-size: 2.5vw;
+    line-height: 1.25;
+    margin-top: 10px;
+  }
+
+  @include xxs-block{
+    font-size: 3vw;
+  }
 
   &_fs24{
     font-size: 24px;
@@ -435,31 +455,58 @@ body, div, h1, h2, h3, h4, p, input {
     }
   }
 
-  &_margin-top25{
+  &_mt25{
     margin-top: 25px;
 
     @include elg(margin-top, 10px);
     @include md(margin-top, .6vw);
-
-    @include sm-block{
-      font-size: 2.15vw;
-      line-height: 1.25;
-      margin-top: 10px;
-    }
-
-    @include xs-block{
-      font-size: 2.5vw;
-      line-height: 1.25;
-      margin-top: 10px;
-    }
-
-    @include xxs-block{
-      font-size: 3vw;
-    }
   }
 
-  &_margin-top10{
+  &_mt15{
+    margin-top: 15px;
+  }
+
+  &_mt10{
     margin-top: 10px;
+  }
+
+  &_mt0{
+    margin-top: 0;
+  }
+
+  &_ml15{
+    margin-left: 15px;
+  } 
+
+  &_bold{
+    font-family: GothamPro-Bold, sans-serif;
+  }
+}
+
+.mainTitle{
+  font-family: GothamPro-Medium, sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: 1px;
+  color: white;
+
+  @include to(1300px){
+    font-size: 25px;
+  }
+
+  // @include lg(font-size, 20px);
+
+  @include md-block{
+    font-size: 1.8vw;
+    line-height: 1;
+  }
+
+  @include sm-block{
+    font-size: 4vw;
+  }
+
+  @include xs-block{
+    line-height: 1.3;
   }
 }
 
@@ -506,7 +553,6 @@ body, div, h1, h2, h3, h4, p, input {
 //---unique slide----
 .slide{
   position: relative;
-  background: url(../images/my/bg/bg.jpg) no-repeat;
   width: 1344px;
   // height: 650px;
   padding: 110px 60px;
@@ -651,7 +697,7 @@ body, div, h1, h2, h3, h4, p, input {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 65%;
+    width: 55%;
 
     @include elg-block{
       width: 55%;
@@ -947,10 +993,10 @@ body, div, h1, h2, h3, h4, p, input {
   }
 }
 
-//-----versions of slides----
-//---v1----
-.slide1{
-  background: url(../images/my/bg/bg_2.png);
+//-----template----
+//---v1(title slide)----
+.template1{
+  background: url(../images/my/bg/bg3.jpg);
 
   @include xs-block{
     background-repeat: no-repeat;
@@ -985,19 +1031,23 @@ body, div, h1, h2, h3, h4, p, input {
   }
 }
 
-//----v2----
-.slide2{
+//----v2(img on the right)----
+.template2{
 
   &__content{
     position: relative;
     // border: 1px solid red;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-top: 20px;
     z-index: 10;
 
-    @include lg(margin-top, 10px);
+    @include lg-block{
+      margin-top: 10px;
+      align-items: flex-start;
+    };
     @include md(margin-top, 15px);
 
     @include xs-block{
@@ -1015,6 +1065,7 @@ body, div, h1, h2, h3, h4, p, input {
 
   &__right{
     width: 55%;
+    // text-align: right;
 
     @include sm(width, 59%);
     @include xs-block{
@@ -1025,11 +1076,24 @@ body, div, h1, h2, h3, h4, p, input {
 
   &__img{
     width: 100%;
-  }
+    max-width: 50vh;
 
-  &_boldAnd_mt-0{
-    font-family: GothamPro-Bold, sans-serif;
-    margin-top: 0;
+    @include elg-block{
+      max-width: 40vh;
+    }
+
+    @include lg-block{
+      max-width: 30vh;
+    }
+
+    @include md-block{
+      max-width: 23vh;
+      // max-height: 50%;
+    }
+
+    @include sm-block{
+      max-width: none;
+    }
   }
 
   &__button{
@@ -1037,27 +1101,17 @@ body, div, h1, h2, h3, h4, p, input {
     margin: 20px auto 0 auto;
   }
 
-  &__title {
-    font-family: GothamPro-Medium, sans-serif;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: 1px;
+  &__title {    
     max-width: calc(100% - 60px);
-    color: white;
+  }
 
-    @include md-block{
-      font-size: 2.5vw;
-      line-height: 1;
-    }
-
-    @include sm-block{
-      font-size: 4vw;
-    }
+  &__video{
+    width: 100%;
   }
 }
 
-//----v3----
-.slide3{
+//----v3(img on the left)----
+.template3{
 
   &__content{
     position: relative;
@@ -1096,26 +1150,10 @@ body, div, h1, h2, h3, h4, p, input {
   }
 
   &__title {
-    // border: 1px solid red;
-    font-family: GothamPro-Medium, sans-serif;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: 1px;
-    max-width: calc(100% - 60px);
-    color: white;
-
-    @include md-block{
-      font-size: 2.5vw;
-      line-height: 1;
-      margin-top: 30px;
-    }
-
-    @include sm-block{
-      font-size: 4vw;
-    }
-
+    // max-width: calc(100% - 60px);
     &_right{
       width: 53%;
+      // margin-top: 30px;
       margin-left: auto;
       margin-right: 0;
 
@@ -1150,7 +1188,7 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 //---v4----
-.slide4{
+.template4{
   background: url(../images/my/bg/bg_2.png);
 
   &__bgText{
@@ -1181,7 +1219,7 @@ body, div, h1, h2, h3, h4, p, input {
     margin: 15px;
   }  
 
-  &__title{ 
+  &__title{
     font-family: GothamPro-Bold, sans-serif;
     font-size: 32px;
     letter-spacing: 1px;
@@ -1198,45 +1236,60 @@ body, div, h1, h2, h3, h4, p, input {
   }
 }
 
-//---other-------------------------------------------------
+//-----v5(rows and cols)----
+.template5{
 
-.slide4video{
+  &__title{
+    max-width: calc(100% - 60px);
+  }
 
-  &__video{
+  &__row{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__col{
+    width: 49%;
+
+    & > img{
+      width: 100%;
+      max-width: 40vh;
+
+
+      @include lg-block{
+        max-width: 25vh;
+      }
+
+      @include md-block{
+        max-width: 20vh;
+      }
+
+      @include sm-block{
+        max-width: none;
+      }
+    }
   }
 }
 
-//----temporary
-.bg1{
-  background: url(../images/bg/bg1_1.png) no-repeat;
+//---other-------------------------------------------------
 
-  &_2{
-    background: url(../images/bg/bg1_2.png) no-repeat;
-  }
+//----backgrounds
+.bg1{
+  background: url(../images/my/bg/bg1.png) no-repeat;
 }
 
 .bg2{
-  background: url(../images/bg/bg2_1.png) no-repeat;
-
-  &_2{
-    background: url(../images/bg/bg2_2.jpg) no-repeat;
-  }
+  background: url(../images/my/bg/bg2.png) no-repeat;
 }
 
-.bg3{
-  background: url(../images/bg/bg3_1.png) no-repeat;
+//-------slides
+.slide12{
 
-  &_2{
-    background: url(../images/bg/bg3_2.png) no-repeat;
-  }
-}
-
-.bg4{
-  background: url(../images/bg/bg4_1.jpg) no-repeat;
-  background-size: cover;
-
-  &_2{
-    background: url(../images/bg/bg4_2.jpg) no-repeat;
+  &__img{
+    // max-width: 400px;
+    // max-height: 500px;
+    // width: 50vh;
   }
 }
