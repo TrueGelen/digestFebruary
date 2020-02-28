@@ -401,6 +401,7 @@ body, div, h1, h2, h3, h4, p, input {
   font-size: 16px;
   line-height: 22px;
   color: white;
+  text-align: justify;
 
   @include lg-block{
     line-height: 1.2;
@@ -606,7 +607,7 @@ body, div, h1, h2, h3, h4, p, input {
     height: 48px;
     cursor: pointer;
     transition: .3s;
-    opacity: .1;
+    opacity: .05;
     
     background-color: #026FB9;
     border-radius: 50%;
@@ -1117,6 +1118,7 @@ body, div, h1, h2, h3, h4, p, input {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-top: 20px;
     z-index: 10;
@@ -1151,7 +1153,7 @@ body, div, h1, h2, h3, h4, p, input {
 
   &__title {
     // max-width: calc(100% - 60px);
-    &_right{
+    /* &_right{
       width: 53%;
       // margin-top: 30px;
       margin-left: auto;
@@ -1163,7 +1165,7 @@ body, div, h1, h2, h3, h4, p, input {
         margin-left: 0;
         margin-right: auto;
       };
-    }
+    } */
   }
 
   &__subtitle{
@@ -1247,11 +1249,20 @@ body, div, h1, h2, h3, h4, p, input {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    // align-items: center;
+    margin-top: 20px;
+
+    @include sm-block{
+      flex-wrap: wrap;
+    }
   }
 
   &__col{
     width: 49%;
+
+    @include sm-block{
+      width: 100%;
+    }
 
     & > img{
       width: 100%;
@@ -1267,7 +1278,16 @@ body, div, h1, h2, h3, h4, p, input {
       }
 
       @include sm-block{
-        max-width: none;
+        max-width: 60%;
+        margin-top: 20px;
+      }
+
+      @include xs-block{
+        max-width: 80%;
+      }
+
+      @include xxs-block{
+        max-width: 100%;
       }
     }
   }
@@ -1285,11 +1305,64 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 //-------slides
-.slide12{
+.slide19{
+
+  &_img{
+    width: 350px;
+
+    @include elg(width, 270px);
+    @include lg(width, 200px);
+    @include md(width, 160px);
+  }
+}
+
+.slide22{
+
+  &__imgDiv{
+    text-align: center;
+    margin-top: 15px;
+  }
 
   &__img{
-    // max-width: 400px;
-    // max-height: 500px;
-    // width: 50vh;
+    max-width: 200px !important;
+  }
+}
+
+.slide23{
+
+  &__img{
+    @include elg(max-width, none);
+    @include lg(max-width, none);
+    @include md(max-width, none);
+  }
+}
+
+.slide24{
+
+  &__img{
+    width: 200px;
+  }
+}
+
+.slide25{
+
+  &__content{
+    align-items: flex-start;
+  }
+
+  &__left{
+    @include sm-block{
+      width: 45%;
+    }    
+  }
+
+  &__right{
+    @include sm-block{
+      width: 45%;
+    }    
+  }
+
+  &__img{
+    margin-top: 15px;
   }
 }
