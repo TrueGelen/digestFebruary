@@ -1297,8 +1297,46 @@ body, div, h1, h2, h3, h4, p, input {
   }
 }
 
-//---other-------------------------------------------------
+//------v6(two columns)
+.template6{
+  
+  &__content{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
 
+    @include xs-block{
+      flex-wrap: wrap;
+    }
+  }
+
+  &__left{
+    width: 48%;
+
+    @include xs-block{
+     width: 100%;
+    }
+  }
+
+  &__right{
+    width: 48%;
+
+    @include xs-block{
+      width: 100%;
+      margin-top: 30px;
+     }
+  }
+
+  &__img{
+    width: 100%;
+
+    @include sm-block{
+      margin-top: 10px;
+    }
+  }
+}
+
+//---other-----------------------------------------
 //----backgrounds
 .bg1{
   background: url(../images/my/bg/bg1.png) no-repeat;
@@ -1368,5 +1406,15 @@ body, div, h1, h2, h3, h4, p, input {
 
   &__img{
     margin-top: 15px;
+  }
+}
+
+.slide30{
+
+  &__img{
+    
+    @include lg(width, 30vw);
+
+    @include sm(width, 100%);
   }
 }
