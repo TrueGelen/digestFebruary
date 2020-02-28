@@ -52,7 +52,6 @@ body, div, h1, h2, h3, h4, p, input {
 
 #wrapper{
   height: 100vh;
-  overflow: hidden;
   @include elg(height, 755px);
   @include lg(height, 600px);
   @include md-block{
@@ -403,7 +402,6 @@ body, div, h1, h2, h3, h4, p, input {
   line-height: 22px;
   margin-top: 30px;
   color: white;
-  text-align: justify;
 
   @include lg-block{
     line-height: 1.2;
@@ -463,18 +461,6 @@ body, div, h1, h2, h3, h4, p, input {
   &_margin-top10{
     margin-top: 10px;
   }
-
-  &_margin-top0{
-    margin-top: 0;
-  }
-
-  &_margin-left15{
-    margin-left: 15px;
-  }
-
-  &_bold{
-    font-family: GothamPro-Bold, sans-serif;
-  }
 }
 
 .button{
@@ -518,217 +504,12 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 //---unique slide----
-.uniq1{
-  @include xs-block{
-    background-size: cover;
-    height: 100vh !important;
-  }
-
-  &__firstButton{
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    left: 50%;
-    bottom: 19%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    transition: .3s;
-    
-    background-color: #026FB9;
-    border-radius: 50%;
-    border: 2px solid #FFFFFF;
-    box-shadow: 
-    0px 0px 1px rgba(0, 0, 0, 0.04), 
-    0px 4px 8px rgba(0, 0, 0, 0.04), 
-    0px 16px 24px rgba(0, 0, 0, 0.04),
-    0px 24px 32px rgba(0, 0, 0, 0.04);
-
-    @include sm(bottom, 23%);
-
-    &:hover{
-      box-shadow: 0px 0px 10px 0px rgb(227, 227, 236);
-      border: 2px solid #FFFFFF;
-    }
-
-    & > svg{
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      fill: white;
-      width: 30%;
-
-      @include sm(transform, translate(-50%, -50%) rotate(90deg))
-    }
-  }
-
-  &__content{
-    // border: 1px solid red;
-    position: absolute;
-    display: inline-block;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-
-    @include md-block{
-      top: 15%;
-      transform: translateX(-50%);
-    }
-
-    @include sm-block{
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-
-  &__title {
-    font-family: GothamPro-Bold, sans-serif;
-    font-size: 102px;
-    line-height: 98px;
-    text-align: center;
-    letter-spacing: 1px;
-    text-shadow: 0px 4px 24px rgba(0, 0, 0, 0.35);
-    text-transform: uppercase;
-
-    @include md-block{
-      font-size: 9.5vw;
-      line-height: 1.1;
-    }
-
-    @include sm-block{
-      font-size: 12vw;
-      line-height: 1.1;
-    }
-  }
-
-  &__subtitle{
-    font-family: GothamPro-Light, sans-serif;
-    font-size: 32px;
-    line-height: 40px;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-top: 20px;
-    text-transform: uppercase;
-
-    @include md-block{
-      font-size: 3vw;
-      line-height: 1.3;
-      margin-top: 1.5vw;
-    }
-
-    @include sm-block{
-      font-size: 4vw;
-      line-height: 1.3;
-      margin-top: 2.5vw;
-    }
-  }
-
-  &__date{
-    font-family: GothamPro-Light, sans-serif;
-    font-size: 24px;
-    line-height: 40px;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-top: 20px;
-
-    @include md-block{
-      font-size: 2vw;
-      line-height: 0;
-      margin-top: 3vw;
-    }
-
-    @include sm-block{
-      font-size: 3vw;
-      line-height: 0;
-      margin-top: 4.5vw;
-    }
-  }
-}
-
-.uniq2{
-  @include xs-block{
-    background-size: cover;
-    height: 100vh !important;
-  }
-
-  &__content{
-    // border: 1px solid red;
-    position: absolute;
-    left: 6vw;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 58vw;
-    max-width: 900px;
-
-    @include from(1920px){
-      left: 115px;
-    }
-
-    @include md-block{
-      left: 30px;
-    }
-
-    @include sm-block{
-      width: calc(100% - 60px);
-    }
-  }
-
-  &__title {
-    font-family: GothamPro-Medium, sans-serif;
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: 1px;
-    color: white;
-
-    @include md-block{
-      font-size: 2.8vw;
-      line-height: 1.1;
-    }
-
-    @include sm-block{
-      font-size: 4.5vw;
-    }
-  }
-}
-
-.slideMenu{
-
-  &__content{
-    text-align: center;
-    margin-top: 30%;
-    transform: translateY(-50%);
-  }
-
-  &__menu{
-    // border: 1px solid red;
-
-    & > ul{
-      // border: 1px solid white;
-
-      & > li{
-        // border: 1px solid blue;
-
-        & > a{
-          // border: 1px solid red;
-          text-decoration: none;
-          border: none;
-          font-family: GothamPro-Bold, sans-serif;
-          font-size: 3vw;
-        }
-      }
-    }
-  }
-}
-
-//-----templates----
 .slide{
   position: relative;
-  background: url(../images/my/bg/bg1.jpg) no-repeat;
+  background: url(../images/my/bg/bg.jpg) no-repeat;
   width: 1344px;
   // height: 650px;
   padding: 110px 60px;
-  overflow: hidden;
 
   @include elg-block{
     width: 1135px;
@@ -831,22 +612,22 @@ body, div, h1, h2, h3, h4, p, input {
     bottom: 0;
     left: 50%;  
     width: 100%;
-    transform: translate(-50%, 20%);
+    transform: translateX(-50%);
 
     @include xs-block{
       display: block;
       position: relative;
       width: calc(100% + 60px);
-      transform: translate(-30px, 20%);
+      transform: translateX(-30px);
       left: 0;
       margin-top: 15vw;
     }
 
     &_rev{
-      transform: translate(-50%, 20%) scale(-1, 1);
+      transform: translateX(-50%) ;
 
       @include xs-block{
-        transform: translate(-30px, 20%) scale(-1, 1);
+        transform: translateX(-30px) scale(-1, 1);
       }
     }
   }
@@ -870,7 +651,7 @@ body, div, h1, h2, h3, h4, p, input {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 55%;
+    width: 65%;
 
     @include elg-block{
       width: 55%;
@@ -990,79 +771,185 @@ body, div, h1, h2, h3, h4, p, input {
       }
     }
   }
+}
 
-  &__cross{
-    position: absolute;
-
-    &_small{
-      width: 60px;
-      left: 10%;
-      top: 10%;
-    }
-
-    &_big{
-      width: 150px;
-      right: 10%;
-      bottom: 10%;
-
-      &_left{
-        right: auto;
-        left: 2%;
-        bottom: 3%;
-        z-index: 2;
-      }
-    }
-
-    &_blue{
-      width: 150px;
-      right: 1%;
-      top: 10%;
-      z-index: 11;
-
-      &_left{
-        right: auto;
-        top: auto;
-        left: 4%;
-        bottom: 3%;
-        z-index: 2;
-      }
-    }
+.uniq1{
+  @include xs-block{
+    background-size: cover;
+    height: 100vh !important;
   }
 
-  &__lightBlueCirc{
+  &__firstButton{
     position: absolute;
-    left: 0;
-    top: 45%;
-    width: 30%;
+    width: 48px;
+    height: 48px;
+    left: 50%;
+    bottom: 19%;
     transform: translateX(-50%);
+    cursor: pointer;
+    transition: .3s;
+    
+    background-color: #026FB9;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    box-shadow: 
+    0px 0px 1px rgba(0, 0, 0, 0.04), 
+    0px 4px 8px rgba(0, 0, 0, 0.04), 
+    0px 16px 24px rgba(0, 0, 0, 0.04),
+    0px 24px 32px rgba(0, 0, 0, 0.04);
 
-    &_right{
-      left: auto;
-      right: 0;
+    @include sm(bottom, 23%);
+
+    &:hover{
+      box-shadow: 0px 0px 10px 0px rgb(227, 227, 236);
+      border: 2px solid #FFFFFF;
+    }
+
+    & > svg{
+      position: absolute;
+      left: 50%;
       top: 50%;
-      width: 45%;
-      transform: translate(50%, -50%);
+      transform: translate(-50%, -50%);
+      fill: white;
+      width: 30%;
+
+      @include sm(transform, translate(-50%, -50%) rotate(90deg))
     }
   }
 
-  &__blueCirc{
-    position: absolute;
-    right: 10%;
-    top: 10%;
-    width: 10%;
-  }
-
-  &__whiteBorderCirc{
+  &__content{
     // border: 1px solid red;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 33%;   
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+    @include md-block{
+      top: 15%;
+      transform: translateX(-50%);
+    }
+
+    @include sm-block{
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__title {
+    font-family: GothamPro-Bold, sans-serif;
+    font-size: 102px;
+    line-height: 98px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0px 4px 24px rgba(0, 0, 0, 0.35);
+    text-transform: uppercase;
+
+    @include md-block{
+      font-size: 9.5vw;
+      line-height: 1.1;
+    }
+
+    @include sm-block{
+      font-size: 12vw;
+      line-height: 1.1;
+    }
+  }
+
+  &__subtitle{
+    font-family: GothamPro-Medium, sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    text-transform: uppercase;
+
+    @include md-block{
+      font-size: 3vw;
+      line-height: 1.3;
+      margin-top: 1.5vw;
+    }
+
+    @include sm-block{
+      font-size: 4vw;
+      line-height: 1.3;
+      margin-top: 2.5vw;
+    }
+  }
+
+  &__date{
+    font-family: GothamPro-Light, sans-serif;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 20px;
+
+    @include md-block{
+      font-size: 2vw;
+      line-height: 0;
+      margin-top: 3vw;
+    }
+
+    @include sm-block{
+      font-size: 3vw;
+      line-height: 0;
+      margin-top: 4.5vw;
+    }
   }
 }
 
+.uniq2{
+  @include xs-block{
+    background-size: cover;
+    height: 100vh !important;
+  }
+
+  &__content{
+    // border: 1px solid red;
+    position: absolute;
+    left: 6vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 58vw;
+    max-width: 900px;
+
+    @include from(1920px){
+      left: 115px;
+    }
+
+    @include md-block{
+      left: 30px;
+    }
+
+    @include sm-block{
+      width: calc(100% - 60px);
+    }
+  }
+
+  &__title {
+    font-family: GothamPro-Medium, sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 1px;
+    color: white;
+
+    @include md-block{
+      font-size: 2.8vw;
+      line-height: 1.1;
+    }
+
+    @include sm-block{
+      font-size: 4.5vw;
+    }
+  }
+}
+
+//-----versions of slides----
 //---v1----
-.template1{
+.slide1{
   background: url(../images/my/bg/bg_2.png);
 
   @include xs-block{
@@ -1081,7 +968,7 @@ body, div, h1, h2, h3, h4, p, input {
     line-height: 80px;
     text-align: center;
     letter-spacing: 1px;
-    color: white;
+    color: #014F8D;
 
     @include md-block{
       font-size: 4.5vw;
@@ -1099,14 +986,13 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 //----v2----
-.template2{
+.slide2{
 
   &__content{
+    position: relative;
     // border: 1px solid red;
-    position: relative;    
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     margin-top: 20px;
     z-index: 10;
@@ -1117,10 +1003,6 @@ body, div, h1, h2, h3, h4, p, input {
     @include xs-block{
       flex-wrap: wrap;
       justify-content: center;
-    }
-
-    &_ft{
-      align-items: flex-start;
     }
   }
 
@@ -1133,7 +1015,6 @@ body, div, h1, h2, h3, h4, p, input {
 
   &__right{
     width: 55%;
-    text-align: right;
 
     @include sm(width, 59%);
     @include xs-block{
@@ -1157,10 +1038,8 @@ body, div, h1, h2, h3, h4, p, input {
   }
 
   &__title {
-    position: relative;
     font-family: GothamPro-Medium, sans-serif;
     font-size: 32px;
-    text-transform: uppercase;
     line-height: 40px;
     letter-spacing: 1px;
     max-width: calc(100% - 60px);
@@ -1178,13 +1057,12 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 //----v3----
-.template3{
+.slide3{
 
   &__content{
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
     margin-top: 20px;
     z-index: 10;
@@ -1272,7 +1150,7 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 //---v4----
-.template4{
+.slide4{
   background: url(../images/my/bg/bg_2.png);
 
   &__bgText{
@@ -1320,33 +1198,6 @@ body, div, h1, h2, h3, h4, p, input {
   }
 }
 
-//---v5----
-.template5{
-
-  &__title{
-
-  }
-
-  &__content{
-    position: relative;
-   display: flex; 
-   justify-content: space-between;
-   margin-top: 15px;
-  }
-
-  &__left{
-    width: 49%;
-  }
-
-  &__right{
-    width: 49%;
-  }
-
-  &__mt15px{
-    margin-top: 15px;
-  }
-}
-
 //---other-------------------------------------------------
 
 .slide4video{
@@ -1356,76 +1207,36 @@ body, div, h1, h2, h3, h4, p, input {
   }
 }
 
-//---backgrounds
+//----temporary
 .bg1{
-  background: url(../images/my/bg/bg1.jpg) no-repeat;
-  background-size: cover;
+  background: url(../images/bg/bg1_1.png) no-repeat;
+
+  &_2{
+    background: url(../images/bg/bg1_2.png) no-repeat;
+  }
 }
 
 .bg2{
-  background: url(../images/my/bg/bg2.png) no-repeat;
-  background-size: cover;
+  background: url(../images/bg/bg2_1.png) no-repeat;
+
+  &_2{
+    background: url(../images/bg/bg2_2.jpg) no-repeat;
+  }
 }
 
 .bg3{
-  background: url(../images/my/bg/bg3.jpg) no-repeat;
+  background: url(../images/bg/bg3_1.png) no-repeat;
+
+  &_2{
+    background: url(../images/bg/bg3_2.png) no-repeat;
+  }
+}
+
+.bg4{
+  background: url(../images/bg/bg4_1.jpg) no-repeat;
   background-size: cover;
-}
 
-
-//------individual styles of slides 
-
-.slide2{
-
-  &__img{
-    // border: 1px solid red;
-    max-width: 500px;
-  }
-
-  &__p{
-    font-size: 20px;
-  }
-}
-
-.slide5{
-
-  &__img{
-    // border: 1px solid red;
-    max-width: 550px;
-  }
-
-  &__p{
-    font-size: 20px;
-  }
-}
-
-.slide6{
-
-  &__p{
-    font-size: 20px;
-  }
-}
-
-.slide7{
-
-  &__img{
-    // border: 1px solid red;
-    max-width: 550px;
-  }
-
-  &__p{
-    font-size: 20px;
-  }
-}
-
-.slide9{
-
-  &__img{
-    // border: 1px solid red;
-    // max-width: 550px;
-  }
-
-  &__p{
-    font-size: 20px;
+  &_2{
+    background: url(../images/bg/bg4_2.jpg) no-repeat;
   }
 }
