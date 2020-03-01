@@ -24,7 +24,8 @@ li {
 
 a {
 	text-decoration: none;
-	color: #fff;
+  color: #fff;
+  border: none;
 }
 
 body, div, h1, h2, h3, h4, p, input {
@@ -461,18 +462,34 @@ body, div, h1, h2, h3, h4, p, input {
 
     @include elg(margin-top, 10px);
     @include md(margin-top, .6vw);
+    @include xs(margin-top, 10px);
   }
 
   &_mt15{
     margin-top: 15px;
+
+    @include md(margin-top, 15px);
+    @include sm(margin-top, 15px);
+    @include xs(margin-top, 10px);
+    @include xxs(margin-top, 10px);
   }
 
   &_mt10{
     margin-top: 10px;
+
+    @include md(margin-top, 10px);
+    @include sm(margin-top, 10px);
+    @include xs(margin-top, 10px);
+    @include xxs(margin-top, 10px);
   }
 
   &_mt0{
     margin-top: 0;
+
+    @include md(margin-top, 0);
+    @include sm(margin-top, 0);
+    @include xs(margin-top, 0);
+    @include xxs(margin-top, 0);
   }
 
   &_ml15{
@@ -537,6 +554,10 @@ body, div, h1, h2, h3, h4, p, input {
   &:active{
     box-shadow: none;
   }
+}
+
+.scrollZone{
+  display: none !important;
 }
 
 //----helpers classes---
@@ -611,7 +632,7 @@ body, div, h1, h2, h3, h4, p, input {
     height: 48px;
     cursor: pointer;
     transition: .3s;
-    opacity: .05;
+    opacity: .04;
     
     background-color: #026FB9;
     border-radius: 50%;
@@ -765,7 +786,11 @@ body, div, h1, h2, h3, h4, p, input {
     display: inline-block;
 
     font-family: GothamPro-Bold, sans-serif;
-    font-size: 22px;    
+    font-size: 22px;
+    
+    @media (min-width: 769px) and (max-width: 1050px) {
+      font-size: 16px;
+    } 
   }
 
   &__of{
@@ -773,6 +798,10 @@ body, div, h1, h2, h3, h4, p, input {
     vertical-align: text-top;
     font-family: GothamPro-Bold, sans-serif;
     font-size: 12px;
+
+    @media (min-width: 769px) and (max-width: 1050px) {
+      font-size: 10px;
+    }
   }
 
   &__logo{
@@ -1064,7 +1093,7 @@ body, div, h1, h2, h3, h4, p, input {
   &__left{
     width: 43%;
 
-    @include sm(width, 40%);
+    @include sm(width, 39%);
     @include xs(width, 100%);
   }
 
@@ -1336,6 +1365,66 @@ body, div, h1, h2, h3, h4, p, input {
   }
 }
 
+//---v7(three columns)
+.template7{
+  
+  &__content{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @include xs-block{
+      flex-wrap: wrap;
+      
+      & > :not(:first-child){
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__col{
+    width: 31.5%;
+
+    @include xs-block{
+     width: 100%;
+    }
+  }
+
+  &__img{
+    width: 100%;
+
+    /* @include sm-block{
+      margin-top: 10px;
+    } */
+  }
+
+  &__logo{
+    //from sm to md
+    @media (min-width: 769px) and (max-width: 1050px) {
+      left: auto;
+      right: 15px;
+      transform: translate(0);
+    }
+  }
+
+  &__pagination{
+    @media (min-width: 769px) and (max-width: 1050px) {
+      left: auto;
+      right: 15px;
+      transform: translate(0%);
+    }
+  }
+}
+
+//----v8(just slide without columns)
+.template8{
+
+  &__content{
+    width: 100%;
+  }
+
+}
+
 //---other-----------------------------------------
 //----backgrounds
 .bg1{
@@ -1383,7 +1472,33 @@ body, div, h1, h2, h3, h4, p, input {
 
   &__img{
     width: 200px;
+
+    @include md(width, 80%);
+    @include sm(width, 60%);
+    @include xs(width, 30%);
   }
+
+  &__left{
+    @media (min-width: 769px) and (max-width: 1050px) {
+      width: 25%;
+    }
+
+    @media (min-width: 561px) and (max-width: 768px) {
+      width: 40%;
+    }
+  }
+
+  &__right{
+    // border: 1px solid red;
+    @media (min-width: 769px) and (max-width: 1050px) {
+      width: 73%;
+    }
+
+    @media (min-width: 561px) and (max-width: 768px) {
+      width: 58%;
+    }
+  }
+  
 }
 
 .slide25{
@@ -1416,5 +1531,109 @@ body, div, h1, h2, h3, h4, p, input {
     @include lg(width, 30vw);
 
     @include sm(width, 100%);
+  }
+}
+
+.slide32{
+
+  &__content{
+    @include from(769px){
+      &:hover{
+        z-index: 19;
+      }
+    }
+  }
+}
+
+.slide34{
+  
+  &__col2{
+    
+    @include xs-block{
+      margin-top: 10px !important;
+    }
+  }
+}
+
+.slide37{
+
+  &__img1{
+    max-width: 250px;
+
+    @include lg(max-width, 200px);
+
+    //from md to sm
+    @media (min-width: 769px) and (max-width: 1050px) {
+      width: 17.5vw;
+    }
+  }
+
+  &__img2{
+    max-width: 300px;
+
+    @include md(max-width, 200px);
+  }
+}
+
+.slide50{
+
+  &__content{
+    
+    @include from(769px){
+      &:hover{
+        z-index: 19;
+      }
+    }
+  }
+}
+
+.lastSlide{
+
+  &__content{
+    // border: 1px solid red;
+  }
+
+  &__title{
+
+  }
+
+  &__subtitle{
+
+    &_1{
+
+    }
+  }
+
+  &__contact{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    
+    &_1{
+      margin-top: 50px;
+    }
+  }
+
+  &__contactIcon{
+    width: 60px;
+    margin-right: 20px;
+
+    @include xs(width, 50px);
+    @include xxs-block{
+      width: 40px;
+      margin-right: 10px;
+    }
+  }
+
+  &__contactText{
+
+  }
+
+  &__contactTitle{
+
+  }
+
+  &__contactAdress{
+
   }
 }
