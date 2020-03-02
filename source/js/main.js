@@ -1,4 +1,5 @@
 import './pagination'
+import './logo'
 import './makeButtonsLink'
 import './positionBurger'
 import './menu'
