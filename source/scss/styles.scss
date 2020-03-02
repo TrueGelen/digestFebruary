@@ -52,7 +52,8 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 #wrapper{
-  height: 100vh;
+	height: 100vh;
+	max-height: 100vh;
   @include elg(height, 755px);
   @include lg(height, 600px);
   @include md-block{
@@ -510,7 +511,7 @@ body, div, h1, h2, h3, h4, p, input {
   font-size: 32px;
   line-height: 40px;
   letter-spacing: 1px;
-  color: white;
+	color: white;
 
   @include to(1300px){
     font-size: 25px;
