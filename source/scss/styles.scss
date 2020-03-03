@@ -74,7 +74,6 @@ body, div, h1, h2, h3, h4, p, input {
 
 //---animations---
 
-
 @include from(769px){
   @keyframes showMenu{
     to{
@@ -493,8 +492,8 @@ body, div, h1, h2, h3, h4, p, input {
     @include xxs(margin-top, 0);
   }
 
-  &_ml15{
-    margin-left: 15px;
+  &_ml20{
+		margin-left: 20px;
   } 
 
   &_bold{
@@ -564,9 +563,10 @@ body, div, h1, h2, h3, h4, p, input {
 .fixedLogo{
 	position: fixed;
 	// top: 50%;
-	bottom: 0;
-	left: 50%;
-	transform: translate(-50%);
+	// bottom: 0;
+	top: 0;
+	left: 10%;
+	// transform: translate(-50%);
 
 	width: 93px;
 	height: 23px;
@@ -576,10 +576,19 @@ body, div, h1, h2, h3, h4, p, input {
 	@include md-block{
 		width: 8vw;
 		height: 2vw;
-		bottom: 3%;
+		// bottom: 3%;
 	}
 
 	@include sm(display, none);
+}
+
+.listDot{
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background-color: white;
+	transform: translateY(-50%);
 }
 
 //----helpers classes---
@@ -786,17 +795,19 @@ body, div, h1, h2, h3, h4, p, input {
     position: absolute;
     display: inline-block;
     left: 50%;
-    bottom: 8%;
+    bottom: 3.5%;
     // bottom: 40px;
     transform: translateX(-50%);
     color: #FFFFFF;
 
     &_pur{
       color: #014F8D;
-    }
+		}
+		
+		@include sm(bottom, 6%);
 
     @include md-block{
-      bottom: 8%;
+      bottom: 3.5%;
     }
 
     @include xs-block{
@@ -1608,7 +1619,7 @@ body, div, h1, h2, h3, h4, p, input {
     max-width: 300px;
 
     @include md(max-width, 200px);
-  }
+	}
 }
 
 .slide50{
