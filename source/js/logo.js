@@ -13,10 +13,15 @@ window.addEventListener('load', () => {
 	function buildLogo() {
 		let clientHeight = window.innerHeight
 		let wrapperHeight = parseInt(getPropertyOfElement(wrapper, 'height'))
-		let top = window.innerWidth > 1050 ?
-			((clientHeight - wrapperHeight) / 2) + (wrapperHeight / 100 * 8) :
-			((clientHeight - wrapperHeight) / 2) + (wrapperHeight / 100 * 7)
-		logo.style.top = `${top}px`
+
+		if (window.innerWidth > 768) {
+			let top = window.innerWidth > 1050 ?
+				((clientHeight - wrapperHeight) / 2) + (wrapperHeight / 100 * 8) :
+				((clientHeight - wrapperHeight) / 2) + (wrapperHeight / 100 * 7)
+			logo.style.top = `${top}px`
+		} else {
+			logo.style.top = ''
+		}
 	}
 
 	buildLogo()

@@ -562,11 +562,8 @@ body, div, h1, h2, h3, h4, p, input {
 
 .fixedLogo{
 	position: fixed;
-	// top: 50%;
-	// bottom: 0;
 	top: 0;
 	left: 10%;
-	// transform: translate(-50%);
 
 	width: 93px;
 	height: 23px;
@@ -576,10 +573,18 @@ body, div, h1, h2, h3, h4, p, input {
 	@include md-block{
 		width: 8vw;
 		height: 2vw;
-		// bottom: 3%;
 	}
 
-	@include sm(display, none);
+	@include sm-block{
+		// width: 12vw;
+		// height: 2.75vw;
+		width: 100px;
+		height: 23px;
+		z-index: 20;
+
+		top: calc(18px + 5vw);
+		left: 5vw;
+	}
 }
 
 .listDot{
