@@ -533,6 +533,9 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 .button{
+  display: block;
+  margin: 20px auto 0 auto;
+
   width: 160px;
   height: 39px;
 
@@ -545,7 +548,7 @@ body, div, h1, h2, h3, h4, p, input {
   line-height: 39px;
   text-align: center;
   color: white;
-  transition: .3s;
+  transition: .3s;  
 
   &:hover{
     box-shadow: 0px 0px 10px 0px rgb(227, 227, 236);
@@ -553,6 +556,22 @@ body, div, h1, h2, h3, h4, p, input {
 
   &:active{
     box-shadow: none;
+  }
+
+  &_desktop{
+    @include md-block{
+      height: 30px;
+      font-size: 14px;
+      line-height: 30px;
+    }
+  
+    @include sm(display, none);
+  }
+
+  &_mobile{
+    display: none;
+
+    @include sm(display, block);
   }
 }
 
@@ -568,7 +587,9 @@ body, div, h1, h2, h3, h4, p, input {
 	width: 93px;
 	height: 23px;
 		
-	z-index: 2;
+  z-index: 2;
+  
+  // @include elg(left, 5%);
 
 	@include md-block{
 		width: 8vw;
@@ -807,13 +828,13 @@ body, div, h1, h2, h3, h4, p, input {
 
     &_pur{
       color: #014F8D;
-		}
-		
-		@include sm(bottom, 6%);
-
+    }
+    
     @include md-block{
       bottom: 3.5%;
     }
+		
+		@include sm(bottom, 4%);
 
     @include xs-block{
       bottom: 5%;
@@ -1173,11 +1194,6 @@ body, div, h1, h2, h3, h4, p, input {
     }
   }
 
-  &__button{
-    display: block;
-    margin: 20px auto 0 auto;
-  }
-
   &__title {    
     max-width: calc(100% - 60px);
   }
@@ -1341,32 +1357,32 @@ body, div, h1, h2, h3, h4, p, input {
     @include sm-block{
       width: 100%;
     }
+  }
 
-    & > img{
-      width: 100%;
-      max-width: 40vh;
+  &__colImg{
+    width: 100%;
+    max-width: 40vh;
 
 
-      @include lg-block{
-        max-width: 25vh;
-      }
+    @include lg-block{
+      max-width: 25vh;
+    }
 
-      @include md-block{
-        max-width: 20vh;
-      }
+    @include md-block{
+      max-width: 20vh;
+    }
 
-      @include sm-block{
-        max-width: 60%;
-        margin-top: 20px;
-      }
+    @include sm-block{
+      max-width: 60%;
+      margin-top: 20px;
+    }
 
-      @include xs-block{
-        max-width: 80%;
-      }
+    @include xs-block{
+      max-width: 80%;
+    }
 
-      @include xxs-block{
-        max-width: 100%;
-      }
+    @include xxs-block{
+      max-width: 100%;
     }
   }
 }
@@ -1488,6 +1504,66 @@ body, div, h1, h2, h3, h4, p, input {
 }
 
 //-------slides
+.slide9{
+  
+  &__img{
+
+    @media (min-width: 561px) and (max-width: 768px){
+      width: 100%;
+      max-width: 320px;
+    }
+  }
+}
+
+.slide11{
+
+  &__content{
+    @media (min-width: 769px) and (max-width: 1050px) {
+      margin-top: 10px;
+    }
+  }
+
+  &__listItem{
+    @media (min-width: 769px) and (max-width: 1050px) {
+      margin-top: 0px;
+    }
+  }
+
+  &__listDot{
+    @media (min-width: 769px) and (max-width: 1050px) {
+      width: 3px;
+      height: 3px;
+    }
+  }
+
+  &_buttonSm{
+    @media (min-width: 561px) and (max-width: 768px){
+      display: block;
+    }
+  }
+
+  &_buttonXs{
+    @media (min-width: 561px) and (max-width: 768px){
+      display: none;
+    }
+  }
+}
+
+.slide14{
+
+  &_buttonSm{
+    @media (min-width: 561px) and (max-width: 768px){
+      display: block;
+    }
+  }
+
+  &_buttonXs{
+    @media (min-width: 561px) and (max-width: 768px){
+      display: none;
+    }
+  }
+}
+
 .slide19{
 
   &_img{
@@ -1550,7 +1626,12 @@ body, div, h1, h2, h3, h4, p, input {
       width: 58%;
     }
   }
-  
+
+  &_buttonMd{
+    @media (min-width: 769px) and (max-width: 1050px){
+      margin: 20px 0 0 auto;
+    }    
+  }
 }
 
 .slide25{
@@ -1583,6 +1664,27 @@ body, div, h1, h2, h3, h4, p, input {
     @include lg(width, 30vw);
 
     @include sm(width, 100%);
+  }
+}
+
+.slide31{
+
+  &_img{
+    @media (min-width: 768px) and (max-width: 1200px){
+      width: 90%;
+    }
+  }
+
+  &__pagination{
+    @media (min-width: 768px) and (max-width: 1200px){
+      bottom: 1%;
+    }
+  }
+
+  &__button{
+    @media (min-width: 768px) and (max-width: 1200px){
+      margin-top: 0;
+    }
   }
 }
 
