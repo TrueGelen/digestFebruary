@@ -1106,11 +1106,12 @@ body, div, h1, h2, h3, h4, p, input {
     top: 50%;
     transform: translate(-50%, -50%);
     font-family: GothamPro-Bold, sans-serif;
-    font-size: 72px;
-    line-height: 80px;
+    font-size: 102px;
+    // line-height: 80px;
     text-align: center;
     letter-spacing: 1px;
-    color: #014F8D;
+    text-transform: uppercase;
+    color: #fff;
 
     @include md-block{
       font-size: 4.5vw;
