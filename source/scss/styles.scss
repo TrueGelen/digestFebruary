@@ -678,7 +678,7 @@ body, div, h1, h2, h3, h4, p, input {
     width: 97%;
     display: flex;
     justify-content: space-between;
-    z-index: 18;
+    z-index: 9;
 
     @include md(display, none);
   }
